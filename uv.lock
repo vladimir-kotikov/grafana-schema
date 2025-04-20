@@ -1,8 +1,7 @@
 version = 1
 revision = 1
-requires-python = ">=3.13"
+requires-python = ">=3.11"
 
 [[package]]
-name = "grafana-schemagen"
-version = "0.1.0"
-source = { virtual = "." }
+name = "grafana-schema"
+source = { editable = "." }
