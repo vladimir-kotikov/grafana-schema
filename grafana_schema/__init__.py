@@ -1,1 +1,1 @@
-__version__ = "0.1.0"
+from grafana_schema.models import *  # noqa: F403

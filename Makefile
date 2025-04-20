@@ -21,7 +21,7 @@ models:
 	@uvx --from datamodel-code-generator datamodel-codegen \
 		--input generated/schema.json \
 		--input-file-type jsonschema \
-		--output generated/models.py \
+		--output grafana_schema/models.py \
 		--output-model-type dataclasses.dataclass \
 		--use-generic-container-types \
 		--use-standard-collections \
