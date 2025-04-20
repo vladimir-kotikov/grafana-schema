@@ -40,3 +40,8 @@ models:
 
 build:
 	@uv build
+
+publish:
+	@rm -rf dist
+	@uv build
+	@uv publish
