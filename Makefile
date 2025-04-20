@@ -6,14 +6,18 @@ install:
 
 .PHONY: check
 check:
-	@npx tsc index.mts --noEmit
+	@npx tsc index.mts --noEmit --esModuleInterop --skipLibCheck --target es2016 --module commonjs
 
 .PHONY: schema
 schema:
 	@npx typescript-json-schema \
 		--titles \
-		--refs --topRef --aliasRef \
-		--propOrder --excludePrivate \
+		--refs \
+		--topRef \
+		--aliasRef \
+		--propOrder \
+		--skipLibCheck \
+		--excludePrivate \
 		--strictNullChecks \
 		index.mts Dashboard > generated/schema.json
 
@@ -23,6 +27,7 @@ models:
 		--input-file-type jsonschema \
 		--output grafana_schema/models.py \
 		--output-model-type dataclasses.dataclass \
+		--disable-timestamp \
 		--use-generic-container-types \
 		--use-standard-collections \
 		--enum-field-as-literal all \

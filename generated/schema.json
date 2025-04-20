@@ -51,7 +51,7 @@
                 "datasource": {
                     "anyOf": [
                         {
-                            "$ref": "#/definitions/DataSourceRef_1"
+                            "$ref": "#/definitions/DataSourceRef"
                         },
                         {
                             "type": "null"
@@ -101,9 +101,9 @@
                 "datasource",
                 "target",
                 "snapshotData",
-                "filter",
-                "name",
                 "type",
+                "name",
+                "filter",
                 "hide",
                 "builtIn",
                 "enable",
@@ -120,7 +120,7 @@
                     "type": "string"
                 },
                 "datasource": {
-                    "$ref": "#/definitions/DataSourceRef",
+                    "$ref": "#/definitions/DataSourceRef_1",
                     "description": "The datasource used in all targets.",
                     "title": "datasource"
                 },
@@ -130,7 +130,7 @@
                     "type": "string"
                 },
                 "fieldConfig": {
-                    "$ref": "#/definitions/FieldConfigSource<BarChartPanelFieldConfig>",
+                    "$ref": "#/definitions/FieldConfigSource<BarChartFieldConfig>",
                     "title": "fieldConfig"
                 },
                 "gridPos": {
@@ -205,9 +205,8 @@
                     "type": "string"
                 },
                 "targets": {
-                    "description": "Depends on the panel plugin. See the plugin documentation for details.",
                     "items": {
-                        "$ref": "#/definitions/Record<string,unknown>"
+                        "$ref": "#/definitions/PrometheusDataQuery"
                     },
                     "title": "targets",
                     "type": "array"
@@ -241,137 +240,42 @@
                     "type": "boolean"
                 },
                 "type": {
+                    "const": "barchart",
                     "description": "The panel plugin type id. This is used to find the plugin to display the panel.",
                     "title": "type",
                     "type": "string"
                 }
             },
             "propertyOrder": [
-                "options",
-                "repeat",
                 "type",
-                "transparent",
-                "interval",
-                "id",
-                "title",
-                "description",
-                "datasource",
+                "options",
+                "targets",
                 "fieldConfig",
                 "cacheTimeout",
+                "datasource",
+                "description",
                 "gridPos",
                 "hideTimeOverride",
+                "id",
+                "interval",
                 "libraryPanel",
                 "links",
                 "maxDataPoints",
                 "maxPerRow",
                 "pluginVersion",
                 "queryCachingTTL",
+                "repeat",
                 "repeatDirection",
-                "targets",
                 "timeFrom",
                 "timeShift",
-                "transformations"
+                "title",
+                "transformations",
+                "transparent"
             ],
             "title": "BarChart",
             "type": "object"
         },
-        "BarChartOptions": {
-            "properties": {
-                "barRadius": {
-                    "description": "Controls the radius of each bar.",
-                    "title": "barRadius",
-                    "type": "number"
-                },
-                "barWidth": {
-                    "description": "Controls the width of bars. 1 = Max width, 0 = Min width.",
-                    "title": "barWidth",
-                    "type": "number"
-                },
-                "colorByField": {
-                    "description": "Use the color value for a sibling field to color each bar value.",
-                    "title": "colorByField",
-                    "type": "string"
-                },
-                "fullHighlight": {
-                    "description": "Enables mode which highlights the entire bar area and shows tooltip when cursor\nhovers over highlighted area",
-                    "title": "fullHighlight",
-                    "type": "boolean"
-                },
-                "groupWidth": {
-                    "description": "Controls the width of groups. 1 = max with, 0 = min width.",
-                    "title": "groupWidth",
-                    "type": "number"
-                },
-                "legend": {
-                    "$ref": "#/definitions/VizLegendOptions",
-                    "title": "legend"
-                },
-                "orientation": {
-                    "$ref": "#/definitions/VizOrientation",
-                    "description": "Controls the orientation of the bar chart, either vertical or horizontal.",
-                    "title": "orientation"
-                },
-                "showValue": {
-                    "$ref": "#/definitions/VisibilityMode",
-                    "description": "This controls whether values are shown on top or to the left of bars.",
-                    "title": "showValue"
-                },
-                "stacking": {
-                    "$ref": "#/definitions/StackingMode",
-                    "description": "Controls whether bars are stacked or not, either normally or in percent mode.",
-                    "title": "stacking"
-                },
-                "text": {
-                    "$ref": "#/definitions/VizTextDisplayOptions",
-                    "description": "TODO docs",
-                    "title": "text"
-                },
-                "tooltip": {
-                    "$ref": "#/definitions/VizTooltipOptions",
-                    "title": "tooltip"
-                },
-                "xField": {
-                    "description": "Manually select which field from the dataset to represent the x field.",
-                    "title": "xField",
-                    "type": "string"
-                },
-                "xTickLabelMaxLength": {
-                    "description": "Sets the max length that a label can have before it is truncated.",
-                    "title": "xTickLabelMaxLength",
-                    "type": "number"
-                },
-                "xTickLabelRotation": {
-                    "description": "Controls the rotation of the x axis labels.",
-                    "title": "xTickLabelRotation",
-                    "type": "number"
-                },
-                "xTickLabelSpacing": {
-                    "description": "Controls the spacing between x axis labels.\nnegative values indicate backwards skipping behavior",
-                    "title": "xTickLabelSpacing",
-                    "type": "number"
-                }
-            },
-            "propertyOrder": [
-                "barRadius",
-                "barWidth",
-                "colorByField",
-                "fullHighlight",
-                "groupWidth",
-                "orientation",
-                "showValue",
-                "stacking",
-                "xField",
-                "xTickLabelMaxLength",
-                "xTickLabelRotation",
-                "xTickLabelSpacing",
-                "legend",
-                "tooltip",
-                "text"
-            ],
-            "title": "BarChartOptions",
-            "type": "object"
-        },
-        "BarChartPanelFieldConfig": {
+        "BarChartFieldConfig": {
             "properties": {
                 "axisBorderShow": {
                     "title": "axisBorderShow",
@@ -477,7 +381,103 @@
                 "scaleDistribution",
                 "hideFrom"
             ],
-            "title": "BarChartPanelFieldConfig",
+            "title": "BarChartFieldConfig",
+            "type": "object"
+        },
+        "BarChartOptions": {
+            "properties": {
+                "barRadius": {
+                    "description": "Controls the radius of each bar.",
+                    "title": "barRadius",
+                    "type": "number"
+                },
+                "barWidth": {
+                    "description": "Controls the width of bars. 1 = Max width, 0 = Min width.",
+                    "title": "barWidth",
+                    "type": "number"
+                },
+                "colorByField": {
+                    "description": "Use the color value for a sibling field to color each bar value.",
+                    "title": "colorByField",
+                    "type": "string"
+                },
+                "fullHighlight": {
+                    "description": "Enables mode which highlights the entire bar area and shows tooltip when cursor\nhovers over highlighted area",
+                    "title": "fullHighlight",
+                    "type": "boolean"
+                },
+                "groupWidth": {
+                    "description": "Controls the width of groups. 1 = max with, 0 = min width.",
+                    "title": "groupWidth",
+                    "type": "number"
+                },
+                "legend": {
+                    "$ref": "#/definitions/VizLegendOptions",
+                    "title": "legend"
+                },
+                "orientation": {
+                    "$ref": "#/definitions/VizOrientation",
+                    "description": "Controls the orientation of the bar chart, either vertical or horizontal.",
+                    "title": "orientation"
+                },
+                "showValue": {
+                    "$ref": "#/definitions/VisibilityMode",
+                    "description": "This controls whether values are shown on top or to the left of bars.",
+                    "title": "showValue"
+                },
+                "stacking": {
+                    "$ref": "#/definitions/StackingMode",
+                    "description": "Controls whether bars are stacked or not, either normally or in percent mode.",
+                    "title": "stacking"
+                },
+                "text": {
+                    "$ref": "#/definitions/VizTextDisplayOptions",
+                    "description": "TODO docs",
+                    "title": "text"
+                },
+                "tooltip": {
+                    "$ref": "#/definitions/VizTooltipOptions",
+                    "title": "tooltip"
+                },
+                "xField": {
+                    "description": "Manually select which field from the dataset to represent the x field.",
+                    "title": "xField",
+                    "type": "string"
+                },
+                "xTickLabelMaxLength": {
+                    "description": "Sets the max length that a label can have before it is truncated.",
+                    "title": "xTickLabelMaxLength",
+                    "type": "number"
+                },
+                "xTickLabelRotation": {
+                    "description": "Controls the rotation of the x axis labels.",
+                    "title": "xTickLabelRotation",
+                    "type": "number"
+                },
+                "xTickLabelSpacing": {
+                    "description": "Controls the spacing between x axis labels.\nnegative values indicate backwards skipping behavior",
+                    "title": "xTickLabelSpacing",
+                    "type": "number"
+                }
+            },
+            "propertyOrder": [
+                "barRadius",
+                "barWidth",
+                "colorByField",
+                "fullHighlight",
+                "groupWidth",
+                "orientation",
+                "showValue",
+                "stacking",
+                "xField",
+                "xTickLabelMaxLength",
+                "xTickLabelRotation",
+                "xTickLabelSpacing",
+                "legend",
+                "tooltip",
+                "text"
+            ],
+            "title": "BarChartOptions",
             "type": "object"
         },
         "BarGauge": {
@@ -488,7 +488,7 @@
                     "type": "string"
                 },
                 "datasource": {
-                    "$ref": "#/definitions/DataSourceRef",
+                    "$ref": "#/definitions/DataSourceRef_1",
                     "description": "The datasource used in all targets.",
                     "title": "datasource"
                 },
@@ -573,9 +573,8 @@
                     "type": "string"
                 },
                 "targets": {
-                    "description": "Depends on the panel plugin. See the plugin documentation for details.",
                     "items": {
-                        "$ref": "#/definitions/Record<string,unknown>"
+                        "$ref": "#/definitions/PrometheusDataQuery"
                     },
                     "title": "targets",
                     "type": "array"
@@ -609,36 +608,37 @@
                     "type": "boolean"
                 },
                 "type": {
+                    "const": "bargauge",
                     "description": "The panel plugin type id. This is used to find the plugin to display the panel.",
                     "title": "type",
                     "type": "string"
                 }
             },
             "propertyOrder": [
-                "options",
-                "repeat",
                 "type",
-                "transparent",
-                "interval",
-                "id",
-                "title",
-                "description",
-                "datasource",
+                "options",
+                "targets",
                 "fieldConfig",
                 "cacheTimeout",
+                "datasource",
+                "description",
                 "gridPos",
                 "hideTimeOverride",
+                "id",
+                "interval",
                 "libraryPanel",
                 "links",
                 "maxDataPoints",
                 "maxPerRow",
                 "pluginVersion",
                 "queryCachingTTL",
+                "repeat",
                 "repeatDirection",
-                "targets",
                 "timeFrom",
                 "timeShift",
-                "transformations"
+                "title",
+                "transformations",
+                "transparent"
             ],
             "title": "BarGauge",
             "type": "object"
@@ -1060,24 +1060,24 @@
             },
             "propertyOrder": [
                 "panels",
-                "time",
-                "id",
-                "title",
                 "description",
-                "refresh",
-                "annotations",
-                "snapshot",
+                "id",
                 "links",
+                "title",
                 "templating",
+                "annotations",
                 "editable",
                 "fiscalYearStartMonth",
                 "gnetId",
                 "graphTooltip",
                 "liveNow",
                 "preload",
+                "refresh",
                 "revision",
                 "schemaVersion",
+                "snapshot",
                 "tags",
+                "time",
                 "timepicker",
                 "timezone",
                 "uid",
@@ -1173,7 +1173,7 @@
                 "datasource": {
                     "anyOf": [
                         {
-                            "$ref": "#/definitions/DataSourceRef_1"
+                            "$ref": "#/definitions/DataSourceRef"
                         },
                         {
                             "type": "null"
@@ -1214,27 +1214,6 @@
             "type": "object"
         },
         "DataSourceRef": {
-            "description": "Ref to a DataSource instance",
-            "properties": {
-                "type": {
-                    "description": "The plugin type-id",
-                    "title": "type",
-                    "type": "string"
-                },
-                "uid": {
-                    "description": "Specific datasource instance",
-                    "title": "uid",
-                    "type": "string"
-                }
-            },
-            "propertyOrder": [
-                "type",
-                "uid"
-            ],
-            "title": "DataSourceRef",
-            "type": "object"
-        },
-        "DataSourceRef_1": {
             "properties": {
                 "apiVersion": {
                     "description": "Datasource API version",
@@ -1254,6 +1233,27 @@
             },
             "propertyOrder": [
                 "apiVersion",
+                "type",
+                "uid"
+            ],
+            "title": "DataSourceRef",
+            "type": "object"
+        },
+        "DataSourceRef_1": {
+            "description": "Ref to a DataSource instance",
+            "properties": {
+                "type": {
+                    "description": "The plugin type-id",
+                    "title": "type",
+                    "type": "string"
+                },
+                "uid": {
+                    "description": "Specific datasource instance",
+                    "title": "uid",
+                    "type": "string"
+                }
+            },
+            "propertyOrder": [
                 "type",
                 "uid"
             ],
@@ -1357,7 +1357,7 @@
             "title": "FieldColorModeId",
             "type": "string"
         },
-        "FieldConfig<BarChartPanelFieldConfig>": {
+        "FieldConfig<BarChartFieldConfig>": {
             "properties": {
                 "color": {
                     "$ref": "#/definitions/FieldColor",
@@ -1367,7 +1367,7 @@
                 "custom": {
                     "allOf": [
                         {
-                            "$ref": "#/definitions/BarChartPanelFieldConfig"
+                            "$ref": "#/definitions/BarChartFieldConfig"
                         },
                         {
                             "$ref": "#/definitions/Record<string,unknown>"
@@ -1469,10 +1469,10 @@
                 "unit",
                 "writeable"
             ],
-            "title": "FieldConfig<BarChartPanelFieldConfig>",
+            "title": "FieldConfig<BarChartFieldConfig>",
             "type": "object"
         },
-        "FieldConfig<PieChartPanelFieldConfig>": {
+        "FieldConfig<PieChartFieldConfig>": {
             "properties": {
                 "color": {
                     "$ref": "#/definitions/FieldColor",
@@ -1482,7 +1482,7 @@
                 "custom": {
                     "allOf": [
                         {
-                            "$ref": "#/definitions/PieChartPanelFieldConfig"
+                            "$ref": "#/definitions/PieChartFieldConfig"
                         },
                         {
                             "$ref": "#/definitions/Record<string,unknown>"
@@ -1584,7 +1584,7 @@
                 "unit",
                 "writeable"
             ],
-            "title": "FieldConfig<PieChartPanelFieldConfig>",
+            "title": "FieldConfig<PieChartFieldConfig>",
             "type": "object"
         },
         "FieldConfig<Record<string,unknown>>": {
@@ -1695,7 +1695,7 @@
             "title": "FieldConfig<Record<string,unknown>>",
             "type": "object"
         },
-        "FieldConfig<TablePanelFieldConfig>": {
+        "FieldConfig<TableFieldConfig>": {
             "properties": {
                 "color": {
                     "$ref": "#/definitions/FieldColor",
@@ -1705,7 +1705,7 @@
                 "custom": {
                     "allOf": [
                         {
-                            "$ref": "#/definitions/TablePanelFieldConfig"
+                            "$ref": "#/definitions/TableFieldConfig"
                         },
                         {
                             "$ref": "#/definitions/Record<string,unknown>"
@@ -1807,10 +1807,10 @@
                 "unit",
                 "writeable"
             ],
-            "title": "FieldConfig<TablePanelFieldConfig>",
+            "title": "FieldConfig<TableFieldConfig>",
             "type": "object"
         },
-        "FieldConfig<TimeSeriesPanelFieldConfig>": {
+        "FieldConfig<TimeSeriesFieldConfig>": {
             "properties": {
                 "color": {
                     "$ref": "#/definitions/FieldColor",
@@ -1820,7 +1820,7 @@
                 "custom": {
                     "allOf": [
                         {
-                            "$ref": "#/definitions/TimeSeriesPanelFieldConfig"
+                            "$ref": "#/definitions/TimeSeriesFieldConfig"
                         },
                         {
                             "$ref": "#/definitions/Record<string,unknown>"
@@ -1922,13 +1922,13 @@
                 "unit",
                 "writeable"
             ],
-            "title": "FieldConfig<TimeSeriesPanelFieldConfig>",
+            "title": "FieldConfig<TimeSeriesFieldConfig>",
             "type": "object"
         },
-        "FieldConfigSource<BarChartPanelFieldConfig>": {
+        "FieldConfigSource<BarChartFieldConfig>": {
             "properties": {
                 "defaults": {
-                    "$ref": "#/definitions/FieldConfig<BarChartPanelFieldConfig>",
+                    "$ref": "#/definitions/FieldConfig<BarChartFieldConfig>",
                     "title": "defaults"
                 },
                 "overrides": {
@@ -1974,13 +1974,13 @@
                 "defaults",
                 "overrides"
             ],
-            "title": "FieldConfigSource<BarChartPanelFieldConfig>",
+            "title": "FieldConfigSource<BarChartFieldConfig>",
             "type": "object"
         },
-        "FieldConfigSource<PieChartPanelFieldConfig>": {
+        "FieldConfigSource<PieChartFieldConfig>": {
             "properties": {
                 "defaults": {
-                    "$ref": "#/definitions/FieldConfig<PieChartPanelFieldConfig>",
+                    "$ref": "#/definitions/FieldConfig<PieChartFieldConfig>",
                     "title": "defaults"
                 },
                 "overrides": {
@@ -2026,7 +2026,7 @@
                 "defaults",
                 "overrides"
             ],
-            "title": "FieldConfigSource<PieChartPanelFieldConfig>",
+            "title": "FieldConfigSource<PieChartFieldConfig>",
             "type": "object"
         },
         "FieldConfigSource<Record<string,unknown>>": {
@@ -2081,10 +2081,10 @@
             "title": "FieldConfigSource<Record<string,unknown>>",
             "type": "object"
         },
-        "FieldConfigSource<TablePanelFieldConfig>": {
+        "FieldConfigSource<TableFieldConfig>": {
             "properties": {
                 "defaults": {
-                    "$ref": "#/definitions/FieldConfig<TablePanelFieldConfig>",
+                    "$ref": "#/definitions/FieldConfig<TableFieldConfig>",
                     "title": "defaults"
                 },
                 "overrides": {
@@ -2130,13 +2130,13 @@
                 "defaults",
                 "overrides"
             ],
-            "title": "FieldConfigSource<TablePanelFieldConfig>",
+            "title": "FieldConfigSource<TableFieldConfig>",
             "type": "object"
         },
-        "FieldConfigSource<TimeSeriesPanelFieldConfig>": {
+        "FieldConfigSource<TimeSeriesFieldConfig>": {
             "properties": {
                 "defaults": {
-                    "$ref": "#/definitions/FieldConfig<TimeSeriesPanelFieldConfig>",
+                    "$ref": "#/definitions/FieldConfig<TimeSeriesFieldConfig>",
                     "title": "defaults"
                 },
                 "overrides": {
@@ -2182,7 +2182,7 @@
                 "defaults",
                 "overrides"
             ],
-            "title": "FieldConfigSource<TimeSeriesPanelFieldConfig>",
+            "title": "FieldConfigSource<TimeSeriesFieldConfig>",
             "type": "object"
         },
         "FieldTextAlignment": {
@@ -2204,7 +2204,7 @@
                     "type": "string"
                 },
                 "datasource": {
-                    "$ref": "#/definitions/DataSourceRef",
+                    "$ref": "#/definitions/DataSourceRef_1",
                     "description": "The datasource used in all targets.",
                     "title": "datasource"
                 },
@@ -2289,9 +2289,8 @@
                     "type": "string"
                 },
                 "targets": {
-                    "description": "Depends on the panel plugin. See the plugin documentation for details.",
                     "items": {
-                        "$ref": "#/definitions/Record<string,unknown>"
+                        "$ref": "#/definitions/PrometheusDataQuery"
                     },
                     "title": "targets",
                     "type": "array"
@@ -2325,36 +2324,37 @@
                     "type": "boolean"
                 },
                 "type": {
+                    "const": "gauge",
                     "description": "The panel plugin type id. This is used to find the plugin to display the panel.",
                     "title": "type",
                     "type": "string"
                 }
             },
             "propertyOrder": [
-                "options",
-                "repeat",
                 "type",
-                "transparent",
-                "interval",
-                "id",
-                "title",
-                "description",
-                "datasource",
+                "options",
+                "targets",
                 "fieldConfig",
                 "cacheTimeout",
+                "datasource",
+                "description",
                 "gridPos",
                 "hideTimeOverride",
+                "id",
+                "interval",
                 "libraryPanel",
                 "links",
                 "maxDataPoints",
                 "maxPerRow",
                 "pluginVersion",
                 "queryCachingTTL",
+                "repeat",
                 "repeatDirection",
-                "targets",
                 "timeFrom",
                 "timeShift",
-                "transformations"
+                "title",
+                "transformations",
+                "transparent"
             ],
             "title": "Gauge",
             "type": "object"
@@ -2597,6 +2597,19 @@
             "title": "PercentChangeColorMode",
             "type": "string"
         },
+        "Pick<{name:string;},\"name\">": {
+            "properties": {
+                "name": {
+                    "title": "name",
+                    "type": "string"
+                }
+            },
+            "propertyOrder": [
+                "name"
+            ],
+            "title": "Pick<{name:string;},\"name\">",
+            "type": "object"
+        },
         "PieChart": {
             "properties": {
                 "cacheTimeout": {
@@ -2605,7 +2618,7 @@
                     "type": "string"
                 },
                 "datasource": {
-                    "$ref": "#/definitions/DataSourceRef",
+                    "$ref": "#/definitions/DataSourceRef_1",
                     "description": "The datasource used in all targets.",
                     "title": "datasource"
                 },
@@ -2615,7 +2628,7 @@
                     "type": "string"
                 },
                 "fieldConfig": {
-                    "$ref": "#/definitions/FieldConfigSource<PieChartPanelFieldConfig>",
+                    "$ref": "#/definitions/FieldConfigSource<PieChartFieldConfig>",
                     "title": "fieldConfig"
                 },
                 "gridPos": {
@@ -2690,9 +2703,8 @@
                     "type": "string"
                 },
                 "targets": {
-                    "description": "Depends on the panel plugin. See the plugin documentation for details.",
                     "items": {
-                        "$ref": "#/definitions/Record<string,unknown>"
+                        "$ref": "#/definitions/PrometheusDataQuery"
                     },
                     "title": "targets",
                     "type": "array"
@@ -2726,38 +2738,53 @@
                     "type": "boolean"
                 },
                 "type": {
+                    "const": "piechart",
                     "description": "The panel plugin type id. This is used to find the plugin to display the panel.",
                     "title": "type",
                     "type": "string"
                 }
             },
             "propertyOrder": [
-                "options",
-                "repeat",
                 "type",
-                "transparent",
-                "interval",
-                "id",
-                "title",
-                "description",
-                "datasource",
+                "options",
+                "targets",
                 "fieldConfig",
                 "cacheTimeout",
+                "datasource",
+                "description",
                 "gridPos",
                 "hideTimeOverride",
+                "id",
+                "interval",
                 "libraryPanel",
                 "links",
                 "maxDataPoints",
                 "maxPerRow",
                 "pluginVersion",
                 "queryCachingTTL",
+                "repeat",
                 "repeatDirection",
-                "targets",
                 "timeFrom",
                 "timeShift",
-                "transformations"
+                "title",
+                "transformations",
+                "transparent"
             ],
             "title": "PieChart",
+            "type": "object"
+        },
+        "PieChartFieldConfig": {
+            "properties": {
+                "hideFrom": {
+                    "$ref": "#/definitions/HideSeriesConfig",
+                    "description": "TODO docs",
+                    "title": "hideFrom"
+                }
+            },
+            "propertyOrder": [
+                "hideFrom"
+            ],
+            "title": "PieChartFieldConfig",
             "type": "object"
         },
         "PieChartLabels": {
@@ -2890,20 +2917,6 @@
             "title": "PieChartOptions",
             "type": "object"
         },
-        "PieChartPanelFieldConfig": {
-            "properties": {
-                "hideFrom": {
-                    "$ref": "#/definitions/HideSeriesConfig",
-                    "description": "TODO docs",
-                    "title": "hideFrom"
-                }
-            },
-            "propertyOrder": [
-                "hideFrom"
-            ],
-            "title": "PieChartPanelFieldConfig",
-            "type": "object"
-        },
         "PieChartType": {
             "description": "Select the pie chart display style.",
             "enum": [
@@ -2938,6 +2951,138 @@
                 }
             ],
             "title": "PluginPanel"
+        },
+        "PrometheusDataQuery": {
+            "properties": {
+                "adhocFilters": {
+                    "items": {
+                        "$ref": "#/definitions/ScopeSpecFilter"
+                    },
+                    "title": "adhocFilters",
+                    "type": "array"
+                },
+                "datasource": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/DataSourceRef"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "For mixed data sources the selected datasource is on the query level.\nFor non mixed scenarios this is undefined.\nTODO find a better way to do this ^ that's friendly to schema\nTODO this shouldn't be unknown but DataSourceRef | null",
+                    "title": "datasource"
+                },
+                "editorMode": {
+                    "description": "Specifies which editor is being used to prepare the query. It can be \"code\" or \"builder\"",
+                    "enum": [
+                        "builder",
+                        "code"
+                    ],
+                    "title": "editorMode",
+                    "type": "string"
+                },
+                "exemplar": {
+                    "description": "Execute an additional query to identify interesting raw samples relevant for the given expr",
+                    "title": "exemplar",
+                    "type": "boolean"
+                },
+                "expr": {
+                    "description": "The actual expression/query that will be evaluated by Prometheus",
+                    "title": "expr",
+                    "type": "string"
+                },
+                "format": {
+                    "description": "Query format to determine how to display data points in panel. It can be \"time_series\", \"table\", \"heatmap\"",
+                    "enum": [
+                        "heatmap",
+                        "table",
+                        "time_series"
+                    ],
+                    "title": "format",
+                    "type": "string"
+                },
+                "groupByKeys": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "title": "groupByKeys",
+                    "type": "array"
+                },
+                "hide": {
+                    "description": "If hide is set to true, Grafana will filter out the response(s) associated with this query before returning it to the panel.",
+                    "title": "hide",
+                    "type": "boolean"
+                },
+                "instant": {
+                    "description": "Returns only the latest value that Prometheus has scraped for the requested time series",
+                    "title": "instant",
+                    "type": "boolean"
+                },
+                "intervalFactor": {
+                    "title": "intervalFactor",
+                    "type": "number"
+                },
+                "key": {
+                    "description": "Unique, guid like, string (used only in explore mode)",
+                    "title": "key",
+                    "type": "string"
+                },
+                "legendFormat": {
+                    "description": "Series name override or template. Ex. {{hostname}} will be replaced with label value for hostname",
+                    "title": "legendFormat",
+                    "type": "string"
+                },
+                "queryType": {
+                    "description": "Specify the query flavor\nTODO make this required and give it a default",
+                    "title": "queryType",
+                    "type": "string"
+                },
+                "range": {
+                    "description": "Returns a Range vector, comprised of a set of time series containing a range of data points over time for each time series",
+                    "title": "range",
+                    "type": "boolean"
+                },
+                "refId": {
+                    "description": "A unique identifier for the query within the list of targets.\nIn server side expressions, the refId is used as a variable name to identify results.\nBy default, the UI will assign A->Z; however setting meaningful names may be useful.",
+                    "title": "refId",
+                    "type": "string"
+                },
+                "scopes": {
+                    "items": {
+                        "allOf": [
+                            {
+                                "$ref": "#/definitions/ScopeSpec"
+                            },
+                            {
+                                "$ref": "#/definitions/Pick<{name:string;},\"name\">"
+                            }
+                        ]
+                    },
+                    "title": "scopes",
+                    "type": "array"
+                }
+            },
+            "propertyOrder": [
+                "editorMode",
+                "exemplar",
+                "expr",
+                "format",
+                "instant",
+                "intervalFactor",
+                "legendFormat",
+                "range",
+                "scopes",
+                "adhocFilters",
+                "groupByKeys",
+                "key",
+                "datasource",
+                "hide",
+                "queryType",
+                "refId"
+            ],
+            "title": "PrometheusDataQuery",
+            "type": "object"
         },
         "RangeMap": {
             "description": "Maps numerical ranges to a display text and color.\nFor example, if a value is within a certain range, you can configure a range value mapping to display Low or High rather than the number.",
@@ -3079,7 +3224,7 @@
                     "type": "boolean"
                 },
                 "datasource": {
-                    "$ref": "#/definitions/DataSourceRef",
+                    "$ref": "#/definitions/DataSourceRef_1",
                     "description": "Name of default datasource for the row",
                     "title": "datasource"
                 },
@@ -3119,12 +3264,12 @@
             },
             "propertyOrder": [
                 "panels",
-                "repeat",
-                "type",
-                "id",
-                "title",
                 "datasource",
                 "gridPos",
+                "id",
+                "repeat",
+                "title",
+                "type",
                 "collapsed"
             ],
             "title": "RowPanel",
@@ -3163,6 +3308,85 @@
                 "type"
             ],
             "title": "ScaleDistributionConfig",
+            "type": "object"
+        },
+        "ScopeFilterOperator": {
+            "enum": [
+                "equals",
+                "not-equals",
+                "not-one-of",
+                "one-of",
+                "regex-match",
+                "regex-not-match"
+            ],
+            "title": "ScopeFilterOperator",
+            "type": "string"
+        },
+        "ScopeSpec": {
+            "properties": {
+                "category": {
+                    "title": "category",
+                    "type": "string"
+                },
+                "description": {
+                    "title": "description",
+                    "type": "string"
+                },
+                "filters": {
+                    "items": {
+                        "$ref": "#/definitions/ScopeSpecFilter"
+                    },
+                    "title": "filters",
+                    "type": "array"
+                },
+                "title": {
+                    "title": "title",
+                    "type": "string"
+                },
+                "type": {
+                    "title": "type",
+                    "type": "string"
+                }
+            },
+            "propertyOrder": [
+                "title",
+                "type",
+                "description",
+                "category",
+                "filters"
+            ],
+            "title": "ScopeSpec",
+            "type": "object"
+        },
+        "ScopeSpecFilter": {
+            "properties": {
+                "key": {
+                    "title": "key",
+                    "type": "string"
+                },
+                "operator": {
+                    "$ref": "#/definitions/ScopeFilterOperator",
+                    "title": "operator"
+                },
+                "value": {
+                    "title": "value",
+                    "type": "string"
+                },
+                "values": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "title": "values",
+                    "type": "array"
+                }
+            },
+            "propertyOrder": [
+                "key",
+                "value",
+                "values",
+                "operator"
+            ],
+            "title": "ScopeSpecFilter",
             "type": "object"
         },
         "SortOrder": {
@@ -3267,7 +3491,7 @@
                     "type": "string"
                 },
                 "datasource": {
-                    "$ref": "#/definitions/DataSourceRef",
+                    "$ref": "#/definitions/DataSourceRef_1",
                     "description": "The datasource used in all targets.",
                     "title": "datasource"
                 },
@@ -3352,9 +3576,8 @@
                     "type": "string"
                 },
                 "targets": {
-                    "description": "Depends on the panel plugin. See the plugin documentation for details.",
                     "items": {
-                        "$ref": "#/definitions/Record<string,unknown>"
+                        "$ref": "#/definitions/PrometheusDataQuery"
                     },
                     "title": "targets",
                     "type": "array"
@@ -3388,36 +3611,37 @@
                     "type": "boolean"
                 },
                 "type": {
+                    "const": "stat",
                     "description": "The panel plugin type id. This is used to find the plugin to display the panel.",
                     "title": "type",
                     "type": "string"
                 }
             },
             "propertyOrder": [
-                "options",
-                "repeat",
                 "type",
-                "transparent",
-                "interval",
-                "id",
-                "title",
-                "description",
-                "datasource",
+                "options",
+                "targets",
                 "fieldConfig",
                 "cacheTimeout",
+                "datasource",
+                "description",
                 "gridPos",
                 "hideTimeOverride",
+                "id",
+                "interval",
                 "libraryPanel",
                 "links",
                 "maxDataPoints",
                 "maxPerRow",
                 "pluginVersion",
                 "queryCachingTTL",
+                "repeat",
                 "repeatDirection",
-                "targets",
                 "timeFrom",
                 "timeShift",
-                "transformations"
+                "title",
+                "transformations",
+                "transparent"
             ],
             "title": "Stat",
             "type": "object"
@@ -3489,7 +3713,7 @@
                     "type": "string"
                 },
                 "datasource": {
-                    "$ref": "#/definitions/DataSourceRef",
+                    "$ref": "#/definitions/DataSourceRef_1",
                     "description": "The datasource used in all targets.",
                     "title": "datasource"
                 },
@@ -3499,7 +3723,7 @@
                     "type": "string"
                 },
                 "fieldConfig": {
-                    "$ref": "#/definitions/FieldConfigSource<TablePanelFieldConfig>",
+                    "$ref": "#/definitions/FieldConfigSource<TableFieldConfig>",
                     "title": "fieldConfig"
                 },
                 "gridPos": {
@@ -3574,9 +3798,8 @@
                     "type": "string"
                 },
                 "targets": {
-                    "description": "Depends on the panel plugin. See the plugin documentation for details.",
                     "items": {
-                        "$ref": "#/definitions/Record<string,unknown>"
+                        "$ref": "#/definitions/PrometheusDataQuery"
                     },
                     "title": "targets",
                     "type": "array"
@@ -3610,36 +3833,37 @@
                     "type": "boolean"
                 },
                 "type": {
+                    "const": "table",
                     "description": "The panel plugin type id. This is used to find the plugin to display the panel.",
                     "title": "type",
                     "type": "string"
                 }
             },
             "propertyOrder": [
-                "options",
-                "repeat",
                 "type",
-                "transparent",
-                "interval",
-                "id",
-                "title",
-                "description",
-                "datasource",
+                "options",
+                "targets",
                 "fieldConfig",
                 "cacheTimeout",
+                "datasource",
+                "description",
                 "gridPos",
                 "hideTimeOverride",
+                "id",
+                "interval",
                 "libraryPanel",
                 "links",
                 "maxDataPoints",
                 "maxPerRow",
                 "pluginVersion",
                 "queryCachingTTL",
+                "repeat",
                 "repeatDirection",
-                "targets",
                 "timeFrom",
                 "timeShift",
-                "transformations"
+                "title",
+                "transformations",
+                "transparent"
             ],
             "title": "Table",
             "type": "object"
@@ -3819,6 +4043,77 @@
             "title": "TableDataLinksCellOptions",
             "type": "object"
         },
+        "TableFieldConfig": {
+            "properties": {
+                "align": {
+                    "$ref": "#/definitions/FieldTextAlignment",
+                    "title": "align"
+                },
+                "cellOptions": {
+                    "$ref": "#/definitions/TableCellOptions",
+                    "title": "cellOptions"
+                },
+                "displayMode": {
+                    "description": "This field is deprecated in favor of using cellOptions",
+                    "enum": [
+                        "actions",
+                        "auto",
+                        "basic",
+                        "color-background",
+                        "color-background-solid",
+                        "color-text",
+                        "custom",
+                        "data-links",
+                        "gauge",
+                        "gradient-gauge",
+                        "image",
+                        "json-view",
+                        "lcd-gauge",
+                        "sparkline"
+                    ],
+                    "title": "displayMode",
+                    "type": "string"
+                },
+                "filterable": {
+                    "title": "filterable",
+                    "type": "boolean"
+                },
+                "hidden": {
+                    "title": "hidden",
+                    "type": "boolean"
+                },
+                "hideHeader": {
+                    "description": "Hides any header for a column, useful for columns that show some static content or buttons.",
+                    "title": "hideHeader",
+                    "type": "boolean"
+                },
+                "inspect": {
+                    "title": "inspect",
+                    "type": "boolean"
+                },
+                "minWidth": {
+                    "title": "minWidth",
+                    "type": "number"
+                },
+                "width": {
+                    "title": "width",
+                    "type": "number"
+                }
+            },
+            "propertyOrder": [
+                "align",
+                "cellOptions",
+                "displayMode",
+                "filterable",
+                "hidden",
+                "hideHeader",
+                "inspect",
+                "minWidth",
+                "width"
+            ],
+            "title": "TableFieldConfig",
+            "type": "object"
+        },
         "TableFooterOptions": {
             "description": "Footer options",
             "properties": {
@@ -3950,77 +4245,6 @@
                 "sortBy"
             ],
             "title": "TableOptions",
-            "type": "object"
-        },
-        "TablePanelFieldConfig": {
-            "properties": {
-                "align": {
-                    "$ref": "#/definitions/FieldTextAlignment",
-                    "title": "align"
-                },
-                "cellOptions": {
-                    "$ref": "#/definitions/TableCellOptions",
-                    "title": "cellOptions"
-                },
-                "displayMode": {
-                    "description": "This field is deprecated in favor of using cellOptions",
-                    "enum": [
-                        "actions",
-                        "auto",
-                        "basic",
-                        "color-background",
-                        "color-background-solid",
-                        "color-text",
-                        "custom",
-                        "data-links",
-                        "gauge",
-                        "gradient-gauge",
-                        "image",
-                        "json-view",
-                        "lcd-gauge",
-                        "sparkline"
-                    ],
-                    "title": "displayMode",
-                    "type": "string"
-                },
-                "filterable": {
-                    "title": "filterable",
-                    "type": "boolean"
-                },
-                "hidden": {
-                    "title": "hidden",
-                    "type": "boolean"
-                },
-                "hideHeader": {
-                    "description": "Hides any header for a column, useful for columns that show some static content or buttons.",
-                    "title": "hideHeader",
-                    "type": "boolean"
-                },
-                "inspect": {
-                    "title": "inspect",
-                    "type": "boolean"
-                },
-                "minWidth": {
-                    "title": "minWidth",
-                    "type": "number"
-                },
-                "width": {
-                    "title": "width",
-                    "type": "number"
-                }
-            },
-            "propertyOrder": [
-                "align",
-                "cellOptions",
-                "displayMode",
-                "filterable",
-                "hidden",
-                "hideHeader",
-                "inspect",
-                "minWidth",
-                "width"
-            ],
-            "title": "TablePanelFieldConfig",
             "type": "object"
         },
         "TableSortByFieldState": {
@@ -4415,7 +4639,7 @@
                     "type": "string"
                 },
                 "datasource": {
-                    "$ref": "#/definitions/DataSourceRef",
+                    "$ref": "#/definitions/DataSourceRef_1",
                     "description": "The datasource used in all targets.",
                     "title": "datasource"
                 },
@@ -4425,7 +4649,7 @@
                     "type": "string"
                 },
                 "fieldConfig": {
-                    "$ref": "#/definitions/FieldConfigSource<TimeSeriesPanelFieldConfig>",
+                    "$ref": "#/definitions/FieldConfigSource<TimeSeriesFieldConfig>",
                     "title": "fieldConfig"
                 },
                 "gridPos": {
@@ -4500,9 +4724,8 @@
                     "type": "string"
                 },
                 "targets": {
-                    "description": "Depends on the panel plugin. See the plugin documentation for details.",
                     "items": {
-                        "$ref": "#/definitions/Record<string,unknown>"
+                        "$ref": "#/definitions/PrometheusDataQuery"
                     },
                     "title": "targets",
                     "type": "array"
@@ -4536,78 +4759,42 @@
                     "type": "boolean"
                 },
                 "type": {
+                    "const": "timeseries",
                     "description": "The panel plugin type id. This is used to find the plugin to display the panel.",
                     "title": "type",
                     "type": "string"
                 }
             },
             "propertyOrder": [
-                "options",
-                "repeat",
                 "type",
-                "transparent",
-                "interval",
-                "id",
-                "title",
-                "description",
-                "datasource",
+                "options",
+                "targets",
                 "fieldConfig",
                 "cacheTimeout",
+                "datasource",
+                "description",
                 "gridPos",
                 "hideTimeOverride",
+                "id",
+                "interval",
                 "libraryPanel",
                 "links",
                 "maxDataPoints",
                 "maxPerRow",
                 "pluginVersion",
                 "queryCachingTTL",
+                "repeat",
                 "repeatDirection",
-                "targets",
                 "timeFrom",
                 "timeShift",
-                "transformations"
+                "title",
+                "transformations",
+                "transparent"
             ],
             "title": "TimeSeries",
             "type": "object"
         },
-        "TimeSeriesOptions": {
-            "properties": {
-                "legend": {
-                    "$ref": "#/definitions/VizLegendOptions",
-                    "title": "legend"
-                },
-                "orientation": {
-                    "description": "TODO docs",
-                    "enum": [
-                        "auto",
-                        "horizontal",
-                        "vertical"
-                    ],
-                    "title": "orientation",
-                    "type": "string"
-                },
-                "timezone": {
-                    "items": {
-                        "type": "string"
-                    },
-                    "title": "timezone",
-                    "type": "array"
-                },
-                "tooltip": {
-                    "$ref": "#/definitions/VizTooltipOptions",
-                    "title": "tooltip"
-                }
-            },
-            "propertyOrder": [
-                "legend",
-                "orientation",
-                "tooltip",
-                "timezone"
-            ],
-            "title": "TimeSeriesOptions",
-            "type": "object"
-        },
-        "TimeSeriesPanelFieldConfig": {
+        "TimeSeriesFieldConfig": {
             "properties": {
                 "axisBorderShow": {
                     "title": "axisBorderShow",
@@ -4835,7 +5022,44 @@
                 "stacking",
                 "hideFrom"
             ],
-            "title": "TimeSeriesPanelFieldConfig",
+            "title": "TimeSeriesFieldConfig",
+            "type": "object"
+        },
+        "TimeSeriesOptions": {
+            "properties": {
+                "legend": {
+                    "$ref": "#/definitions/VizLegendOptions",
+                    "title": "legend"
+                },
+                "orientation": {
+                    "description": "TODO docs",
+                    "enum": [
+                        "auto",
+                        "horizontal",
+                        "vertical"
+                    ],
+                    "title": "orientation",
+                    "type": "string"
+                },
+                "timezone": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "title": "timezone",
+                    "type": "array"
+                },
+                "tooltip": {
+                    "$ref": "#/definitions/VizTooltipOptions",
+                    "title": "tooltip"
+                }
+            },
+            "propertyOrder": [
+                "legend",
+                "orientation",
+                "tooltip",
+                "timezone"
+            ],
+            "title": "TimeSeriesOptions",
             "type": "object"
         },
         "TooltipDisplayMode": {
@@ -4940,7 +5164,7 @@
                 "datasource": {
                     "anyOf": [
                         {
-                            "$ref": "#/definitions/DataSourceRef_1"
+                            "$ref": "#/definitions/DataSourceRef"
                         },
                         {
                             "type": "null"
@@ -5047,22 +5271,22 @@
             },
             "propertyOrder": [
                 "datasource",
-                "sort",
-                "name",
-                "type",
-                "hide",
-                "label",
                 "options",
                 "description",
+                "type",
                 "refresh",
-                "multi",
-                "regex",
+                "name",
+                "label",
+                "hide",
                 "query",
                 "allValue",
                 "allowCustomValue",
                 "current",
                 "includeAll",
-                "skipUrlSync"
+                "multi",
+                "regex",
+                "skipUrlSync",
+                "sort"
             ],
             "title": "VariableModel",
             "type": "object"
