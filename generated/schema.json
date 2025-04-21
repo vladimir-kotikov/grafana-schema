@@ -12,9 +12,6 @@
                     "type": "array"
                 }
             },
-            "propertyOrder": [
-                "list"
-            ],
             "title": "AnnotationContainer",
             "type": "object"
         },
@@ -34,10 +31,6 @@
                     "type": "array"
                 }
             },
-            "propertyOrder": [
-                "exclude",
-                "ids"
-            ],
             "title": "AnnotationPanelFilter",
             "type": "object"
         },
@@ -97,18 +90,6 @@
                     "type": "string"
                 }
             },
-            "propertyOrder": [
-                "datasource",
-                "target",
-                "snapshotData",
-                "type",
-                "name",
-                "filter",
-                "hide",
-                "builtIn",
-                "enable",
-                "iconColor"
-            ],
             "title": "AnnotationQuery<DataQuery>",
             "type": "object"
         },
@@ -246,32 +227,6 @@
                     "type": "string"
                 }
             },
-            "propertyOrder": [
-                "type",
-                "options",
-                "targets",
-                "fieldConfig",
-                "cacheTimeout",
-                "datasource",
-                "description",
-                "gridPos",
-                "hideTimeOverride",
-                "id",
-                "interval",
-                "libraryPanel",
-                "links",
-                "maxDataPoints",
-                "maxPerRow",
-                "pluginVersion",
-                "queryCachingTTL",
-                "repeat",
-                "repeatDirection",
-                "timeFrom",
-                "timeShift",
-                "title",
-                "transformations",
-                "transparent"
-            ],
             "title": "BarChart",
             "type": "object"
         },
@@ -364,23 +319,6 @@
                     "title": "thresholdsStyle"
                 }
             },
-            "propertyOrder": [
-                "fillOpacity",
-                "gradientMode",
-                "lineWidth",
-                "thresholdsStyle",
-                "axisBorderShow",
-                "axisCenteredZero",
-                "axisColorMode",
-                "axisGridShow",
-                "axisLabel",
-                "axisPlacement",
-                "axisSoftMax",
-                "axisSoftMin",
-                "axisWidth",
-                "scaleDistribution",
-                "hideFrom"
-            ],
             "title": "BarChartFieldConfig",
             "type": "object"
         },
@@ -460,23 +398,6 @@
                     "type": "number"
                 }
             },
-            "propertyOrder": [
-                "barRadius",
-                "barWidth",
-                "colorByField",
-                "fullHighlight",
-                "groupWidth",
-                "orientation",
-                "showValue",
-                "stacking",
-                "xField",
-                "xTickLabelMaxLength",
-                "xTickLabelRotation",
-                "xTickLabelSpacing",
-                "legend",
-                "tooltip",
-                "text"
-            ],
             "title": "BarChartOptions",
             "type": "object"
         },
@@ -614,32 +535,6 @@
                     "type": "string"
                 }
             },
-            "propertyOrder": [
-                "type",
-                "options",
-                "targets",
-                "fieldConfig",
-                "cacheTimeout",
-                "datasource",
-                "description",
-                "gridPos",
-                "hideTimeOverride",
-                "id",
-                "interval",
-                "libraryPanel",
-                "links",
-                "maxDataPoints",
-                "maxPerRow",
-                "pluginVersion",
-                "queryCachingTTL",
-                "repeat",
-                "repeatDirection",
-                "timeFrom",
-                "timeShift",
-                "title",
-                "transformations",
-                "transparent"
-            ],
             "title": "BarGauge",
             "type": "object"
         },
@@ -716,20 +611,6 @@
                     "title": "valueMode"
                 }
             },
-            "propertyOrder": [
-                "displayMode",
-                "maxVizHeight",
-                "minVizHeight",
-                "minVizWidth",
-                "namePlacement",
-                "showUnfilled",
-                "sizing",
-                "valueMode",
-                "legend",
-                "orientation",
-                "reduceOptions",
-                "text"
-            ],
             "title": "BarGaugeOptions",
             "type": "object"
         },
@@ -967,20 +848,6 @@
                             "type": "number"
                         }
                     },
-                    "propertyOrder": [
-                        "created",
-                        "expires",
-                        "external",
-                        "externalUrl",
-                        "originalUrl",
-                        "id",
-                        "key",
-                        "name",
-                        "orgId",
-                        "updated",
-                        "url",
-                        "userId"
-                    ],
                     "title": "snapshot",
                     "type": "object"
                 },
@@ -1002,9 +869,6 @@
                             "type": "array"
                         }
                     },
-                    "propertyOrder": [
-                        "list"
-                    ],
                     "title": "templating",
                     "type": "object"
                 },
@@ -1020,10 +884,6 @@
                             "type": "string"
                         }
                     },
-                    "propertyOrder": [
-                        "from",
-                        "to"
-                    ],
                     "title": "time",
                     "type": "object"
                 },
@@ -1058,32 +918,6 @@
                     "type": "string"
                 }
             },
-            "propertyOrder": [
-                "panels",
-                "description",
-                "id",
-                "links",
-                "title",
-                "templating",
-                "annotations",
-                "editable",
-                "fiscalYearStartMonth",
-                "gnetId",
-                "graphTooltip",
-                "liveNow",
-                "preload",
-                "refresh",
-                "revision",
-                "schemaVersion",
-                "snapshot",
-                "tags",
-                "time",
-                "timepicker",
-                "timezone",
-                "uid",
-                "version",
-                "weekStart"
-            ],
             "title": "Dashboard",
             "type": "object"
         },
@@ -1144,18 +978,6 @@
                     "type": "string"
                 }
             },
-            "propertyOrder": [
-                "asDropdown",
-                "icon",
-                "includeVars",
-                "keepTime",
-                "tags",
-                "targetBlank",
-                "title",
-                "tooltip",
-                "type",
-                "url"
-            ],
             "title": "DashboardLink",
             "type": "object"
         },
@@ -1203,13 +1025,6 @@
                     "type": "string"
                 }
             },
-            "propertyOrder": [
-                "key",
-                "datasource",
-                "hide",
-                "queryType",
-                "refId"
-            ],
             "title": "DataQuery",
             "type": "object"
         },
@@ -1231,11 +1046,6 @@
                     "type": "string"
                 }
             },
-            "propertyOrder": [
-                "apiVersion",
-                "type",
-                "uid"
-            ],
             "title": "DataSourceRef",
             "type": "object"
         },
@@ -1253,10 +1063,6 @@
                     "type": "string"
                 }
             },
-            "propertyOrder": [
-                "type",
-                "uid"
-            ],
             "title": "DataSourceRef_1",
             "type": "object"
         },
@@ -1293,13 +1099,6 @@
                     "type": "string"
                 }
             },
-            "propertyOrder": [
-                "disabled",
-                "filter",
-                "id",
-                "options",
-                "topic"
-            ],
             "title": "DataTransformerConfig$1",
             "type": "object"
         },
@@ -1327,11 +1126,6 @@
                     "type": "string"
                 }
             },
-            "propertyOrder": [
-                "fixedColor",
-                "mode",
-                "seriesBy"
-            ],
             "title": "FieldColor",
             "type": "object"
         },
@@ -1451,24 +1245,6 @@
                     "type": "boolean"
                 }
             },
-            "propertyOrder": [
-                "custom",
-                "color",
-                "decimals",
-                "description",
-                "displayName",
-                "displayNameFromDS",
-                "filterable",
-                "links",
-                "mappings",
-                "max",
-                "min",
-                "noValue",
-                "path",
-                "thresholds",
-                "unit",
-                "writeable"
-            ],
             "title": "FieldConfig<BarChartFieldConfig>",
             "type": "object"
         },
@@ -1566,24 +1342,6 @@
                     "type": "boolean"
                 }
             },
-            "propertyOrder": [
-                "custom",
-                "color",
-                "decimals",
-                "description",
-                "displayName",
-                "displayNameFromDS",
-                "filterable",
-                "links",
-                "mappings",
-                "max",
-                "min",
-                "noValue",
-                "path",
-                "thresholds",
-                "unit",
-                "writeable"
-            ],
             "title": "FieldConfig<PieChartFieldConfig>",
             "type": "object"
         },
@@ -1674,24 +1432,6 @@
                     "type": "boolean"
                 }
             },
-            "propertyOrder": [
-                "custom",
-                "color",
-                "decimals",
-                "description",
-                "displayName",
-                "displayNameFromDS",
-                "filterable",
-                "links",
-                "mappings",
-                "max",
-                "min",
-                "noValue",
-                "path",
-                "thresholds",
-                "unit",
-                "writeable"
-            ],
             "title": "FieldConfig<Record<string,unknown>>",
             "type": "object"
         },
@@ -1789,24 +1529,6 @@
                     "type": "boolean"
                 }
             },
-            "propertyOrder": [
-                "custom",
-                "color",
-                "decimals",
-                "description",
-                "displayName",
-                "displayNameFromDS",
-                "filterable",
-                "links",
-                "mappings",
-                "max",
-                "min",
-                "noValue",
-                "path",
-                "thresholds",
-                "unit",
-                "writeable"
-            ],
             "title": "FieldConfig<TableFieldConfig>",
             "type": "object"
         },
@@ -1904,24 +1626,6 @@
                     "type": "boolean"
                 }
             },
-            "propertyOrder": [
-                "custom",
-                "color",
-                "decimals",
-                "description",
-                "displayName",
-                "displayNameFromDS",
-                "filterable",
-                "links",
-                "mappings",
-                "max",
-                "min",
-                "noValue",
-                "path",
-                "thresholds",
-                "unit",
-                "writeable"
-            ],
             "title": "FieldConfig<TimeSeriesFieldConfig>",
             "type": "object"
         },
@@ -1950,30 +1654,18 @@
                                             "title": "value"
                                         }
                                     },
-                                    "propertyOrder": [
-                                        "id",
-                                        "value"
-                                    ],
                                     "type": "object"
                                 },
                                 "title": "properties",
                                 "type": "array"
                             }
                         },
-                        "propertyOrder": [
-                            "matcher",
-                            "properties"
-                        ],
                         "type": "object"
                     },
                     "title": "overrides",
                     "type": "array"
                 }
             },
-            "propertyOrder": [
-                "defaults",
-                "overrides"
-            ],
             "title": "FieldConfigSource<BarChartFieldConfig>",
             "type": "object"
         },
@@ -2002,30 +1694,18 @@
                                             "title": "value"
                                         }
                                     },
-                                    "propertyOrder": [
-                                        "id",
-                                        "value"
-                                    ],
                                     "type": "object"
                                 },
                                 "title": "properties",
                                 "type": "array"
                             }
                         },
-                        "propertyOrder": [
-                            "matcher",
-                            "properties"
-                        ],
                         "type": "object"
                     },
                     "title": "overrides",
                     "type": "array"
                 }
             },
-            "propertyOrder": [
-                "defaults",
-                "overrides"
-            ],
             "title": "FieldConfigSource<PieChartFieldConfig>",
             "type": "object"
         },
@@ -2054,30 +1734,18 @@
                                             "title": "value"
                                         }
                                     },
-                                    "propertyOrder": [
-                                        "id",
-                                        "value"
-                                    ],
                                     "type": "object"
                                 },
                                 "title": "properties",
                                 "type": "array"
                             }
                         },
-                        "propertyOrder": [
-                            "matcher",
-                            "properties"
-                        ],
                         "type": "object"
                     },
                     "title": "overrides",
                     "type": "array"
                 }
             },
-            "propertyOrder": [
-                "defaults",
-                "overrides"
-            ],
             "title": "FieldConfigSource<Record<string,unknown>>",
             "type": "object"
         },
@@ -2106,30 +1774,18 @@
                                             "title": "value"
                                         }
                                     },
-                                    "propertyOrder": [
-                                        "id",
-                                        "value"
-                                    ],
                                     "type": "object"
                                 },
                                 "title": "properties",
                                 "type": "array"
                             }
                         },
-                        "propertyOrder": [
-                            "matcher",
-                            "properties"
-                        ],
                         "type": "object"
                     },
                     "title": "overrides",
                     "type": "array"
                 }
             },
-            "propertyOrder": [
-                "defaults",
-                "overrides"
-            ],
             "title": "FieldConfigSource<TableFieldConfig>",
             "type": "object"
         },
@@ -2158,30 +1814,18 @@
                                             "title": "value"
                                         }
                                     },
-                                    "propertyOrder": [
-                                        "id",
-                                        "value"
-                                    ],
                                     "type": "object"
                                 },
                                 "title": "properties",
                                 "type": "array"
                             }
                         },
-                        "propertyOrder": [
-                            "matcher",
-                            "properties"
-                        ],
                         "type": "object"
                     },
                     "title": "overrides",
                     "type": "array"
                 }
             },
-            "propertyOrder": [
-                "defaults",
-                "overrides"
-            ],
             "title": "FieldConfigSource<TimeSeriesFieldConfig>",
             "type": "object"
         },
@@ -2330,32 +1974,6 @@
                     "type": "string"
                 }
             },
-            "propertyOrder": [
-                "type",
-                "options",
-                "targets",
-                "fieldConfig",
-                "cacheTimeout",
-                "datasource",
-                "description",
-                "gridPos",
-                "hideTimeOverride",
-                "id",
-                "interval",
-                "libraryPanel",
-                "links",
-                "maxDataPoints",
-                "maxPerRow",
-                "pluginVersion",
-                "queryCachingTTL",
-                "repeat",
-                "repeatDirection",
-                "timeFrom",
-                "timeShift",
-                "title",
-                "transformations",
-                "transparent"
-            ],
             "title": "Gauge",
             "type": "object"
         },
@@ -2395,16 +2013,6 @@
                     "title": "text"
                 }
             },
-            "propertyOrder": [
-                "minVizHeight",
-                "minVizWidth",
-                "showThresholdLabels",
-                "showThresholdMarkers",
-                "sizing",
-                "orientation",
-                "reduceOptions",
-                "text"
-            ],
             "title": "GaugeOptions",
             "type": "object"
         },
@@ -2416,9 +2024,6 @@
                     "title": "mode"
                 }
             },
-            "propertyOrder": [
-                "mode"
-            ],
             "title": "GraphThresholdsStyleConfig",
             "type": "object"
         },
@@ -2465,13 +2070,6 @@
                     "type": "number"
                 }
             },
-            "propertyOrder": [
-                "h",
-                "static",
-                "w",
-                "x",
-                "y"
-            ],
             "title": "GridPos",
             "type": "object"
         },
@@ -2491,11 +2089,6 @@
                     "type": "boolean"
                 }
             },
-            "propertyOrder": [
-                "legend",
-                "tooltip",
-                "viz"
-            ],
             "title": "HideSeriesConfig",
             "type": "object"
         },
@@ -2532,10 +2125,6 @@
                     "type": "string"
                 }
             },
-            "propertyOrder": [
-                "name",
-                "uid"
-            ],
             "title": "LibraryPanelRef",
             "type": "object"
         },
@@ -2560,10 +2149,6 @@
                     "type": "string"
                 }
             },
-            "propertyOrder": [
-                "dash",
-                "fill"
-            ],
             "title": "LineStyle",
             "type": "object"
         },
@@ -2580,10 +2165,6 @@
                     "title": "options"
                 }
             },
-            "propertyOrder": [
-                "id",
-                "options"
-            ],
             "title": "MatcherConfig$1",
             "type": "object"
         },
@@ -2604,9 +2185,6 @@
                     "type": "string"
                 }
             },
-            "propertyOrder": [
-                "name"
-            ],
             "title": "Pick<{name:string;},\"name\">",
             "type": "object"
         },
@@ -2744,32 +2322,6 @@
                     "type": "string"
                 }
             },
-            "propertyOrder": [
-                "type",
-                "options",
-                "targets",
-                "fieldConfig",
-                "cacheTimeout",
-                "datasource",
-                "description",
-                "gridPos",
-                "hideTimeOverride",
-                "id",
-                "interval",
-                "libraryPanel",
-                "links",
-                "maxDataPoints",
-                "maxPerRow",
-                "pluginVersion",
-                "queryCachingTTL",
-                "repeat",
-                "repeatDirection",
-                "timeFrom",
-                "timeShift",
-                "title",
-                "transformations",
-                "transparent"
-            ],
             "title": "PieChart",
             "type": "object"
         },
@@ -2781,9 +2333,6 @@
                     "title": "hideFrom"
                 }
             },
-            "propertyOrder": [
-                "hideFrom"
-            ],
             "title": "PieChartFieldConfig",
             "type": "object"
         },
@@ -2846,18 +2395,6 @@
                     "type": "number"
                 }
             },
-            "propertyOrder": [
-                "values",
-                "asTable",
-                "calcs",
-                "displayMode",
-                "isVisible",
-                "placement",
-                "showLegend",
-                "sortBy",
-                "sortDesc",
-                "width"
-            ],
             "title": "PieChartLegendOptions",
             "type": "object"
         },
@@ -2905,15 +2442,6 @@
                     "title": "tooltip"
                 }
             },
-            "propertyOrder": [
-                "displayLabels",
-                "legend",
-                "pieType",
-                "tooltip",
-                "orientation",
-                "reduceOptions",
-                "text"
-            ],
             "title": "PieChartOptions",
             "type": "object"
         },
@@ -3063,24 +2591,6 @@
                     "type": "array"
                 }
             },
-            "propertyOrder": [
-                "editorMode",
-                "exemplar",
-                "expr",
-                "format",
-                "instant",
-                "intervalFactor",
-                "legendFormat",
-                "range",
-                "scopes",
-                "adhocFilters",
-                "groupByKeys",
-                "key",
-                "datasource",
-                "hide",
-                "queryType",
-                "refId"
-            ],
             "title": "PrometheusDataQuery",
             "type": "object"
         },
@@ -3112,11 +2622,6 @@
                             ]
                         }
                     },
-                    "propertyOrder": [
-                        "from",
-                        "to",
-                        "result"
-                    ],
                     "title": "options",
                     "type": "object"
                 },
@@ -3126,20 +2631,14 @@
                     "type": "string"
                 }
             },
-            "propertyOrder": [
-                "options",
-                "type"
-            ],
             "title": "RangeMap",
             "type": "object"
         },
         "Record<string,ValueMappingResult>": {
-            "propertyOrder": [],
             "title": "Record<string,ValueMappingResult>",
             "type": "object"
         },
         "Record<string,unknown>": {
-            "propertyOrder": [],
             "title": "Record<string,unknown>",
             "type": "object"
         },
@@ -3170,12 +2669,6 @@
                     "type": "boolean"
                 }
             },
-            "propertyOrder": [
-                "calcs",
-                "fields",
-                "limit",
-                "values"
-            ],
             "title": "ReduceDataOptions",
             "type": "object"
         },
@@ -3196,10 +2689,6 @@
                             "title": "result"
                         }
                     },
-                    "propertyOrder": [
-                        "pattern",
-                        "result"
-                    ],
                     "title": "options",
                     "type": "object"
                 },
@@ -3209,10 +2698,6 @@
                     "type": "string"
                 }
             },
-            "propertyOrder": [
-                "options",
-                "type"
-            ],
             "title": "RegexMap",
             "type": "object"
         },
@@ -3262,16 +2747,6 @@
                     "type": "string"
                 }
             },
-            "propertyOrder": [
-                "panels",
-                "datasource",
-                "gridPos",
-                "id",
-                "repeat",
-                "title",
-                "type",
-                "collapsed"
-            ],
             "title": "RowPanel",
             "type": "object"
         },
@@ -3302,11 +2777,6 @@
                     "title": "type"
                 }
             },
-            "propertyOrder": [
-                "linearThreshold",
-                "log",
-                "type"
-            ],
             "title": "ScaleDistributionConfig",
             "type": "object"
         },
@@ -3348,13 +2818,6 @@
                     "type": "string"
                 }
             },
-            "propertyOrder": [
-                "title",
-                "type",
-                "description",
-                "category",
-                "filters"
-            ],
             "title": "ScopeSpec",
             "type": "object"
         },
@@ -3380,12 +2843,6 @@
                     "type": "array"
                 }
             },
-            "propertyOrder": [
-                "key",
-                "value",
-                "values",
-                "operator"
-            ],
             "title": "ScopeSpecFilter",
             "type": "object"
         },
@@ -3415,10 +2872,6 @@
                             "title": "result"
                         }
                     },
-                    "propertyOrder": [
-                        "match",
-                        "result"
-                    ],
                     "title": "options",
                     "type": "object"
                 },
@@ -3428,10 +2881,6 @@
                     "type": "string"
                 }
             },
-            "propertyOrder": [
-                "options",
-                "type"
-            ],
             "title": "SpecialValueMap",
             "type": "object"
         },
@@ -3466,10 +2915,6 @@
                     "type": "string"
                 }
             },
-            "propertyOrder": [
-                "group",
-                "mode"
-            ],
             "title": "StackingConfig",
             "type": "object"
         },
@@ -3617,32 +3062,6 @@
                     "type": "string"
                 }
             },
-            "propertyOrder": [
-                "type",
-                "options",
-                "targets",
-                "fieldConfig",
-                "cacheTimeout",
-                "datasource",
-                "description",
-                "gridPos",
-                "hideTimeOverride",
-                "id",
-                "interval",
-                "libraryPanel",
-                "links",
-                "maxDataPoints",
-                "maxPerRow",
-                "pluginVersion",
-                "queryCachingTTL",
-                "repeat",
-                "repeatDirection",
-                "timeFrom",
-                "timeShift",
-                "title",
-                "transformations",
-                "transparent"
-            ],
             "title": "Stat",
             "type": "object"
         },
@@ -3690,18 +3109,6 @@
                     "type": "boolean"
                 }
             },
-            "propertyOrder": [
-                "colorMode",
-                "graphMode",
-                "justifyMode",
-                "percentChangeColorMode",
-                "showPercentChange",
-                "textMode",
-                "wideLayout",
-                "orientation",
-                "reduceOptions",
-                "text"
-            ],
             "title": "StatOptions",
             "type": "object"
         },
@@ -3839,32 +3246,6 @@
                     "type": "string"
                 }
             },
-            "propertyOrder": [
-                "type",
-                "options",
-                "targets",
-                "fieldConfig",
-                "cacheTimeout",
-                "datasource",
-                "description",
-                "gridPos",
-                "hideTimeOverride",
-                "id",
-                "interval",
-                "libraryPanel",
-                "links",
-                "maxDataPoints",
-                "maxPerRow",
-                "pluginVersion",
-                "queryCachingTTL",
-                "repeat",
-                "repeatDirection",
-                "timeFrom",
-                "timeShift",
-                "title",
-                "transformations",
-                "transparent"
-            ],
             "title": "Table",
             "type": "object"
         },
@@ -3877,9 +3258,6 @@
                     "type": "string"
                 }
             },
-            "propertyOrder": [
-                "type"
-            ],
             "title": "TableActionsCellOptions",
             "type": "object"
         },
@@ -3896,10 +3274,6 @@
                     "type": "boolean"
                 }
             },
-            "propertyOrder": [
-                "type",
-                "wrapText"
-            ],
             "title": "TableAutoCellOptions",
             "type": "object"
         },
@@ -3932,11 +3306,6 @@
                     "type": "string"
                 }
             },
-            "propertyOrder": [
-                "mode",
-                "type",
-                "valueDisplayMode"
-            ],
             "title": "TableBarGaugeCellOptions",
             "type": "object"
         },
@@ -3986,10 +3355,6 @@
                     "type": "boolean"
                 }
             },
-            "propertyOrder": [
-                "type",
-                "wrapText"
-            ],
             "title": "TableColorTextCellOptions",
             "type": "object"
         },
@@ -4019,12 +3384,6 @@
                     "type": "boolean"
                 }
             },
-            "propertyOrder": [
-                "applyToRow",
-                "mode",
-                "type",
-                "wrapText"
-            ],
             "title": "TableColoredBackgroundCellOptions",
             "type": "object"
         },
@@ -4037,9 +3396,6 @@
                     "type": "string"
                 }
             },
-            "propertyOrder": [
-                "type"
-            ],
             "title": "TableDataLinksCellOptions",
             "type": "object"
         },
@@ -4100,17 +3456,6 @@
                     "type": "number"
                 }
             },
-            "propertyOrder": [
-                "align",
-                "cellOptions",
-                "displayMode",
-                "filterable",
-                "hidden",
-                "hideHeader",
-                "inspect",
-                "minWidth",
-                "width"
-            ],
             "title": "TableFieldConfig",
             "type": "object"
         },
@@ -4144,13 +3489,6 @@
                     "type": "boolean"
                 }
             },
-            "propertyOrder": [
-                "countRows",
-                "enablePagination",
-                "fields",
-                "reducer",
-                "show"
-            ],
             "title": "TableFooterOptions",
             "type": "object"
         },
@@ -4171,11 +3509,6 @@
                     "type": "string"
                 }
             },
-            "propertyOrder": [
-                "alt",
-                "title",
-                "type"
-            ],
             "title": "TableImageCellOptions",
             "type": "object"
         },
@@ -4188,9 +3521,6 @@
                     "type": "string"
                 }
             },
-            "propertyOrder": [
-                "type"
-            ],
             "title": "TableJsonViewCellOptions",
             "type": "object"
         },
@@ -4236,14 +3566,6 @@
                     "type": "array"
                 }
             },
-            "propertyOrder": [
-                "cellHeight",
-                "footer",
-                "frameIndex",
-                "showHeader",
-                "showTypeIcons",
-                "sortBy"
-            ],
             "title": "TableOptions",
             "type": "object"
         },
@@ -4261,10 +3583,6 @@
                     "type": "string"
                 }
             },
-            "propertyOrder": [
-                "desc",
-                "displayName"
-            ],
             "title": "TableSortByFieldState",
             "type": "object"
         },
@@ -4472,42 +3790,6 @@
                     "type": "string"
                 }
             },
-            "propertyOrder": [
-                "hideValue",
-                "type",
-                "drawStyle",
-                "gradientMode",
-                "insertNulls",
-                "thresholdsStyle",
-                "transform",
-                "lineColor",
-                "lineInterpolation",
-                "lineStyle",
-                "lineWidth",
-                "spanNulls",
-                "fillBelowTo",
-                "fillColor",
-                "fillOpacity",
-                "pointColor",
-                "pointSize",
-                "pointSymbol",
-                "showPoints",
-                "axisBorderShow",
-                "axisCenteredZero",
-                "axisColorMode",
-                "axisGridShow",
-                "axisLabel",
-                "axisPlacement",
-                "axisSoftMax",
-                "axisSoftMin",
-                "axisWidth",
-                "scaleDistribution",
-                "barAlignment",
-                "barMaxWidth",
-                "barWidthFactor",
-                "stacking",
-                "hideFrom"
-            ],
             "title": "TableSparklineCellOptions",
             "type": "object"
         },
@@ -4528,10 +3810,6 @@
                     ]
                 }
             },
-            "propertyOrder": [
-                "color",
-                "value"
-            ],
             "title": "Threshold",
             "type": "object"
         },
@@ -4552,10 +3830,6 @@
                     "type": "array"
                 }
             },
-            "propertyOrder": [
-                "mode",
-                "steps"
-            ],
             "title": "ThresholdsConfig",
             "type": "object"
         },
@@ -4584,11 +3858,6 @@
                     "type": "string"
                 }
             },
-            "propertyOrder": [
-                "display",
-                "from",
-                "to"
-            ],
             "title": "TimeOption$1",
             "type": "object"
         },
@@ -4622,12 +3891,6 @@
                     "type": "array"
                 }
             },
-            "propertyOrder": [
-                "hidden",
-                "nowDelay",
-                "quick_ranges",
-                "refresh_intervals"
-            ],
             "title": "TimePickerConfig$1",
             "type": "object"
         },
@@ -4765,32 +4028,6 @@
                     "type": "string"
                 }
             },
-            "propertyOrder": [
-                "type",
-                "options",
-                "targets",
-                "fieldConfig",
-                "cacheTimeout",
-                "datasource",
-                "description",
-                "gridPos",
-                "hideTimeOverride",
-                "id",
-                "interval",
-                "libraryPanel",
-                "links",
-                "maxDataPoints",
-                "maxPerRow",
-                "pluginVersion",
-                "queryCachingTTL",
-                "repeat",
-                "repeatDirection",
-                "timeFrom",
-                "timeShift",
-                "title",
-                "transformations",
-                "transparent"
-            ],
             "title": "TimeSeries",
             "type": "object"
         },
@@ -4988,40 +4225,6 @@
                     "type": "string"
                 }
             },
-            "propertyOrder": [
-                "drawStyle",
-                "gradientMode",
-                "insertNulls",
-                "thresholdsStyle",
-                "transform",
-                "lineColor",
-                "lineInterpolation",
-                "lineStyle",
-                "lineWidth",
-                "spanNulls",
-                "fillBelowTo",
-                "fillColor",
-                "fillOpacity",
-                "pointColor",
-                "pointSize",
-                "pointSymbol",
-                "showPoints",
-                "axisBorderShow",
-                "axisCenteredZero",
-                "axisColorMode",
-                "axisGridShow",
-                "axisLabel",
-                "axisPlacement",
-                "axisSoftMax",
-                "axisSoftMin",
-                "axisWidth",
-                "scaleDistribution",
-                "barAlignment",
-                "barMaxWidth",
-                "barWidthFactor",
-                "stacking",
-                "hideFrom"
-            ],
             "title": "TimeSeriesFieldConfig",
             "type": "object"
         },
@@ -5053,12 +4256,6 @@
                     "title": "tooltip"
                 }
             },
-            "propertyOrder": [
-                "legend",
-                "orientation",
-                "tooltip",
-                "timezone"
-            ],
             "title": "TimeSeriesOptions",
             "type": "object"
         },
@@ -5086,10 +4283,6 @@
                     "type": "string"
                 }
             },
-            "propertyOrder": [
-                "options",
-                "type"
-            ],
             "title": "ValueMap",
             "type": "object"
         },
@@ -5135,12 +4328,6 @@
                     "type": "string"
                 }
             },
-            "propertyOrder": [
-                "color",
-                "icon",
-                "index",
-                "text"
-            ],
             "title": "ValueMappingResult",
             "type": "object"
         },
@@ -5269,25 +4456,6 @@
                     "title": "type"
                 }
             },
-            "propertyOrder": [
-                "datasource",
-                "options",
-                "description",
-                "type",
-                "refresh",
-                "name",
-                "label",
-                "hide",
-                "query",
-                "allValue",
-                "allowCustomValue",
-                "current",
-                "includeAll",
-                "multi",
-                "regex",
-                "skipUrlSync",
-                "sort"
-            ],
             "title": "VariableModel",
             "type": "object"
         },
@@ -5330,11 +4498,6 @@
                     "title": "value"
                 }
             },
-            "propertyOrder": [
-                "selected",
-                "text",
-                "value"
-            ],
             "title": "VariableOption",
             "type": "object"
         },
@@ -5408,17 +4571,6 @@
                     "type": "number"
                 }
             },
-            "propertyOrder": [
-                "asTable",
-                "calcs",
-                "displayMode",
-                "isVisible",
-                "placement",
-                "showLegend",
-                "sortBy",
-                "sortDesc",
-                "width"
-            ],
             "title": "VizLegendOptions",
             "type": "object"
         },
@@ -5451,11 +4603,6 @@
                     "type": "number"
                 }
             },
-            "propertyOrder": [
-                "percentSize",
-                "titleSize",
-                "valueSize"
-            ],
             "title": "VizTextDisplayOptions",
             "type": "object"
         },
@@ -5483,13 +4630,6 @@
                     "title": "sort"
                 }
             },
-            "propertyOrder": [
-                "hideZeros",
-                "maxHeight",
-                "maxWidth",
-                "mode",
-                "sort"
-            ],
             "title": "VizTooltipOptions",
             "type": "object"
         }

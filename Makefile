@@ -14,8 +14,6 @@ schema:
 		--titles \
 		--refs \
 		--topRef \
-		--aliasRef \
-		--propOrder \
 		--skipLibCheck \
 		--excludePrivate \
 		--strictNullChecks \
